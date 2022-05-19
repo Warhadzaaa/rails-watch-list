@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+Movie.destroy_all
+
+10.times do
+  Movie.create(title: Faker::Movies::StarWars.character, overview: Faker::Movies::StarWars.quote, poster_url: Faker::Internet.url(host: 'example.com'), rating: rand(10))
+end
