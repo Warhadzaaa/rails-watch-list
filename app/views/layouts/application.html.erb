@@ -14,8 +14,60 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
+    <div class="content">
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <div class="container-fluid">
+          <%= link_to lists_path, class: "navbar-brand" do %>
+            <%= image_tag "https://fr.seaicons.com/wp-content/uploads/2016/05/Darth-Mauls-light-sabers-icon.png" %>
+          <% end %>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <%# if user_signed_in? %>
+                <li class="nav-item active">
+                  <%= link_to "My lists", lists_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "New list", new_list_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item dropdown">
+                  <%= image_tag "https://media-exp1.licdn.com/dms/image/C4D03AQEpHWn-87bqHA/profile-displayphoto-shrink_200_200/0/1565274444824?e=1658361600&v=beta&t=4pSu7-EShU-CtsC2uN4_WImntw2lUpippNGJv8tUGis", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <%= link_to "Action", "#", class: "dropdown-item" %>
+                    <%= link_to "Another action", "#", class: "dropdown-item" %>
+                    <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  </div>
+                </li>
+              <%# else %>
+                <!--li class="nav-item"-->
+                  <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+                <!--/li-->
+              <%# end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+        <%= yield %>
+
     </div>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        Follow us <i class="fas fa-heart"></i>
+      </div>
+    </div>
+
   </body>
 </html>

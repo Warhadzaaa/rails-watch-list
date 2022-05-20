@@ -1,9 +1,16 @@
-<h1>My lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.ytimg.com/vi/r390vbD_5c8/maxresdefault.jpg);">
+  <div class="container">
+    <h1><strong>Save any kind of movies</strong></h1>
+  </div>
+</div>
 <br>
-<ul>
-<% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list) %></li>
-<% end %>
-</ul>
-<br>
-<%= link_to 'Add a new list', new_list_path, class: "btn btn-primary" %>
+<div class="container">
+  <h2>Add a movie</h2>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)">
+        <%= link_to list.name, list_path(list), class: "text-decoration" %>
+      </div>
+    <% end %>
+  </div>
+</div>
