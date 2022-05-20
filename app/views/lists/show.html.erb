@@ -17,8 +17,9 @@
     <div class="card-product m-4">
       <img src="https://picsum.photos/200/300" />
       <div class="card-product-infos">
-        <h2><%= bookmark.movie.title %></h2>
-        <p><%= bookmark.comment %></p>
+        <h2><%= link_to bookmark.movie.title, bookmark.movie.poster_url, class: "text-decorationn" %> - <em><%= bookmark.movie.rating %>/10</em></h2>
+        <h6><%= bookmark.movie.overview %></h6>
+        <p><strong><em>"<%= bookmark.comment %>"</em></strong></p>
         <%=link_to "X", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration" %>
       </div>
     </div>
